@@ -1,6 +1,6 @@
+import { Quicksand } from 'next/font/google';
 import NavBar from '../components/NavBar';
 import './globals.css';
-import { Quicksand } from 'next/font/google';
 
 const font = Quicksand({
     weight: ['400', '700'],

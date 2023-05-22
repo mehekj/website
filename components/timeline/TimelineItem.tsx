@@ -42,21 +42,19 @@ export default function TimelineItem(props: TimelineItemProps) {
                         </div>
                         <FiChevronRight
                             size={40}
-                            className={`cursor-pointer ${
+                            className={`cursor-pointer transition-all duration-300 ${
                                 open ? 'rotate-90 text-main' : 'rotate-0'
                             }`}
                         />
                     </div>
-                    <div className="overflow-hidden transition-all duration-300">
+                    <div className="overflow-hidden">
                         <ul
                             className={`list-inside list-disc ${
-                                open
-                                    ? 'h-full opacity-100'
-                                    : 'h-0 overflow-hidden opacity-0'
+                                open ? 'h-full' : 'h-0 overflow-hidden'
                             }`}
                         >
-                            {props.description.map((item) => (
-                                <li>{item}</li>
+                            {props.description.map((item, i) => (
+                                <li key={i}>{item}</li>
                             ))}
                         </ul>
                     </div>

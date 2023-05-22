@@ -21,11 +21,9 @@ export default function Hero() {
                     computer science student, teaching assistant, and research
                     assistant at Brown University
                 </p>
-                <Button
-                    text="resume"
-                    icon={<FiDownload />}
-                    href={'/files/Resume.pdf'}
-                />
+                <Button icon={<FiDownload />} href={'/files/Resume.pdf'}>
+                    <span className="font-bold">resume</span>
+                </Button>
             </div>
         </div>
     );

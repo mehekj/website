@@ -29,14 +29,19 @@ export default function Education() {
                 </OutlineBox>
 
                 <OutlineBox>
-                    <div>
-                        <div className="flex flex-row items-center justify-between">
-                            <h3>Bergen County Academies</h3>
-                            <p className="text-right text-sm">HS Diploma</p>
+                    <div className="flex flex-col gap-4">
+                        <div>
+                            <div className="flex flex-row items-center justify-between">
+                                <h3>Bergen County Academies</h3>
+                                <p className="text-right text-sm">HS Diploma</p>
+                            </div>
+                            <div className="flex flex-row items-center justify-between text-right">
+                                <p className="text-sm">09/2016 - 06/2020</p>
+                                <p className="text-sm">3.9 GPA</p>
+                            </div>
                         </div>
-                        <div className="flex flex-row items-center justify-between text-right">
-                            <p className="text-sm">09/2016 - 06/2020</p>
-                            <p className="text-sm">3.9 GPA</p>
+                        <div>
+                            Track: Academy for Engineering and Design Technology
                         </div>
                     </div>
                 </OutlineBox>
