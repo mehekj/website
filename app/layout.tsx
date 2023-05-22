@@ -1,4 +1,4 @@
-import NavBar from '@/components/NavBar';
+import NavBar from '../components/NavBar';
 import './globals.css';
 import { Quicksand } from 'next/font/google';
 

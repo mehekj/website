@@ -1,7 +1,7 @@
 'use client';
 
 import { FiChevronRight } from 'react-icons/fi';
-import OutlineBox from '@/components/OutlineBox';
+import OutlineBox from '../OutlineBox';
 import { useState } from 'react';
 
 export type TimelineItemProps = {

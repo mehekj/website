@@ -1,4 +1,4 @@
-import OutlineBox from '@/components/OutlineBox';
+import OutlineBox from '../OutlineBox';
 
 export default function Education() {
     return (

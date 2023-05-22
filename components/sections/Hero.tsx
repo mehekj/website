@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Button from '@/components/Button';
+import Button from '../Button';
 import { FiDownload } from 'react-icons/fi';
 
 export default function Hero() {

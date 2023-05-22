@@ -1,6 +1,4 @@
-import TimelineItem, {
-    TimelineItemProps,
-} from '@/components/timeline/TimelineItem';
+import TimelineItem, { TimelineItemProps } from './TimelineItem';
 
 export default function Timeline(props: { items: TimelineItemProps[] }) {
     return (
