@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-primary {
+    @apply bg-white text-black dark:bg-black dark:text-white;
+}
+
+.highlight {
+    @apply bg-highlight_light dark:bg-highlight_dark;
+}
+
+.link {
+    @apply font-bold text-main underline transition duration-300;
+}
+
+h1 {
+    @apply text-6xl font-bold;
+}
+
+h2 {
+    @apply text-4xl font-bold leading-normal;
+}
+
+h3 {
+    @apply text-2xl font-bold;
+}
+
+.home-section {
+    @apply flex w-full flex-col justify-center;
+}
