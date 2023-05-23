@@ -18,7 +18,7 @@ export default function RootLayout({
         <html lang="en" className={`${font.variable} border-box`}>
             <title>Mehek Jethani Portfolio</title>
             <head />
-            <body className="bg-primary text-base">
+            <body className="bg-primary text-base md:text-lg">
                 <div className="m-auto max-w-screen-lg px-6 py-28 md:py-40">
                     <NavBar />
                     {children}

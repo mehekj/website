@@ -25,3 +25,7 @@ h3 {
 .home-section {
     @apply flex w-full flex-col justify-center;
 }
+
+.hover-color {
+    @apply transition-colors duration-300 hover:text-main;
+}

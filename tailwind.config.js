@@ -16,9 +16,6 @@ module.exports = {
                 main: '#29A8FD',
                 highlight: '#29A8FD44',
             },
-            fontSize: {
-                base: '1.125rem',
-            },
         },
     },
     plugins: [],
