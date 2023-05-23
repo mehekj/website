@@ -14,7 +14,7 @@ export default function Misc() {
     return (
         <div className="flex flex-col justify-center gap-16">
             <div className="flex flex-col gap-8">
-                <h1 className="text-5xl md:text-6xl">miscellaneous</h1>
+                <h1>miscellaneous</h1>
                 <p>other stuff that I'm interested in and have been up to!</p>
             </div>
             <div className="flex flex-col gap-24 md:gap-16">
