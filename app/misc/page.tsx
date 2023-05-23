@@ -1,7 +1,16 @@
+import { getAllPages } from '@/lib/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Misc() {
+    const posts = getAllPages('_misc', [
+        'title',
+        'date',
+        'description',
+        'image',
+        'slug',
+    ]);
+
     return (
         <div className="flex flex-col justify-center gap-16">
             <div className="flex flex-col gap-8">
@@ -9,20 +18,15 @@ export default function Misc() {
                 <p>other stuff that I'm interested in and have been up to!</p>
             </div>
             <div className="flex flex-col gap-24 md:gap-16">
-                <ProjectCard
-                    title="Intrinsically aCUTE"
-                    date="05/2023"
-                    description="Implementation of the intrinsic triangulations paper"
-                    image="/images/profile.jpeg"
-                    link="/"
-                />
-                <ProjectCard
-                    title="Intrinsically aCUTE"
-                    date="05/2023"
-                    description="Implementation of the intrinsic triangulations paper"
-                    image="/images/profile.jpeg"
-                    link="/"
-                />
+                {posts.map((post) => (
+                    <MiscCard
+                        title={post.title}
+                        date={post.date}
+                        description={post.description}
+                        image={post.image}
+                        link={'/misc/' + post.slug}
+                    />
+                ))}
             </div>
         </div>
     );
@@ -36,7 +40,7 @@ type MiscCardProps = {
     link: string;
 };
 
-function ProjectCard(props: MiscCardProps) {
+function MiscCard(props: MiscCardProps) {
     return (
         <div className="flex flex-col items-center gap-5 md:flex-row md:gap-10">
             <div className="pointer-events-none min-w-[100px] overflow-hidden rounded-full md:min-w-[150px]">

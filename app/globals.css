@@ -6,10 +6,6 @@
     @apply bg-white text-black dark:bg-black dark:text-white;
 }
 
-.highlight {
-    @apply bg-highlight_light dark:bg-highlight_dark;
-}
-
 .link {
     @apply font-bold text-main underline transition duration-300;
 }

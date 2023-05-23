@@ -12,7 +12,7 @@ export default function Button(props: PropsWithChildren<ButtonProps>) {
         <a
             target="_blank"
             href={props.href}
-            className="flex max-w-fit items-center justify-center gap-2.5 rounded border-2 border-solid border-black px-3.5 py-0.5 transition duration-300 hover:bg-highlight_light dark:border-white hover:dark:bg-highlight_dark"
+            className="flex max-w-fit items-center justify-center gap-2.5 rounded border-2 border-solid border-black px-3.5 py-0.5 transition duration-300 hover:bg-highlight dark:border-white"
         >
             {props.children} {props.icon}
         </a>

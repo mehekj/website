@@ -1,7 +1,18 @@
+import { getAllPages } from '@/lib/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Projects() {
+    const projects = getAllPages('_projects', [
+        'title',
+        'date',
+        'technologies',
+        'category',
+        'description',
+        'image',
+        'slug',
+    ]);
+
     return (
         <div className="flex flex-col justify-center gap-16">
             <div className="flex flex-col gap-8">
@@ -9,24 +20,17 @@ export default function Projects() {
                 <p>my academic and professional programming projects</p>
             </div>
             <div className="flex flex-col gap-24 md:gap-16">
-                <ProjectCard
-                    title="Intrinsically aCUTE"
-                    date="05/2023"
-                    technologies="C++, Qt, Eigen"
-                    category="computer graphics"
-                    description="Implementation of the intrinsic triangulations paper"
-                    image="/images/profile.jpeg"
-                    link="/"
-                />
-                <ProjectCard
-                    title="Intrinsically aCUTE"
-                    date="05/2023"
-                    technologies="C++, Qt, Eigen"
-                    category="computer graphics"
-                    description="Implementation of the intrinsic triangulations paper"
-                    image="/images/profile.jpeg"
-                    link="/"
-                />
+                {projects.map((project) => (
+                    <ProjectCard
+                        title={project.title}
+                        date={project.date}
+                        technologies={project.technologies}
+                        category={project.category}
+                        description={project.description}
+                        image={project.image}
+                        link={'/projects/' + project.slug}
+                    />
+                ))}
             </div>
         </div>
     );

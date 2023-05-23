@@ -10,12 +10,20 @@ export default function Skills() {
         'CSS',
     ];
 
-    const technologies = ['OpenGL', 'Node.js', 'React.js', 'OpenCV'];
+    const technologies = [
+        'OpenGL',
+        'Node.js',
+        'React.js',
+        'Tensorflow',
+        'Next.js',
+        'TailwindCSS',
+        'OpenCV',
+    ];
 
-    const software = [
+    const tools = [
         'Git',
         'VSCode',
-        'QtCreator',
+        'Qt',
         'Figma',
         'Photoshop',
         'Illustrator',
@@ -42,9 +50,9 @@ export default function Skills() {
                 </div>
             </div>
             <div className="flex flex-col gap-3">
-                <h3>software</h3>
+                <h3>tools</h3>
                 <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
-                    {software.map((text) => (
+                    {tools.map((text) => (
                         <Bubble>{text}</Bubble>
                     ))}
                 </div>

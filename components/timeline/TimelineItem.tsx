@@ -1,10 +1,7 @@
-'use client';
-
 import { FiChevronRight } from 'react-icons/fi';
 import OutlineBox from '../OutlineBox';
-import { useState } from 'react';
 
-export type TimelineItemProps = {
+export type TimelineItemData = {
     title: string;
     subtitle: string;
     start: string;
@@ -12,14 +9,20 @@ export type TimelineItemProps = {
     description: string[];
 };
 
-export default function TimelineItem(props: TimelineItemProps) {
-    const [open, setOpen] = useState(false);
+type TimelineItemProps = TimelineItemData & {
+    index: number;
+    active: number | undefined;
+    setActive: (index: number) => void;
+};
 
+export default function TimelineItem(props: TimelineItemProps) {
     const toggleOpen = (e: React.PointerEvent) => {
         e.stopPropagation();
         e.preventDefault();
-        setOpen(!open);
+        props.setActive(props.index);
     };
+
+    const open = props.index === props.active;
 
     return (
         <div className="-translate-y-1.5">
@@ -30,12 +33,14 @@ export default function TimelineItem(props: TimelineItemProps) {
             >{`${props.start} - ${props.end}`}</div>
             <OutlineBox active={open}>
                 <div
-                    className={`flex cursor-pointer flex-col ${
-                        open ? 'gap-4' : ''
-                    }`}
+                    className="flex cursor-pointer flex-col overflow-hidden"
                     onPointerDown={toggleOpen}
                 >
-                    <div className="flex flex-row items-center justify-between">
+                    <div
+                        className={`flex flex-row items-center justify-between transition-all ${
+                            open ? 'mb-4' : 'mb-0 delay-200 duration-100'
+                        }`}
+                    >
                         <div>
                             <h3>{props.title}</h3>
                             <h4>{props.subtitle}</h4>
@@ -47,12 +52,13 @@ export default function TimelineItem(props: TimelineItemProps) {
                             }`}
                         />
                     </div>
-                    <div className="overflow-hidden">
-                        <ul
-                            className={`list-inside list-disc ${
-                                open ? 'h-full' : 'h-0 overflow-hidden'
-                            }`}
-                        >
+                    <div
+                        className={
+                            'transition-all duration-300' +
+                            (open ? ' max-h-screen' : ' max-h-0')
+                        }
+                    >
+                        <ul className="list-inside list-disc">
                             {props.description.map((item, i) => (
                                 <li key={i}>{item}</li>
                             ))}
