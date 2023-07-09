@@ -3,7 +3,7 @@ import OutlineBox from '../OutlineBox';
 export default function Education() {
     return (
         <div className="home-section gap-8">
-            <h2>education</h2>
+            <h2>Education</h2>
             <div className="flex w-full flex-row flex-wrap gap-5 md:flex-nowrap">
                 <OutlineBox>
                     <div className="flex flex-col gap-4">

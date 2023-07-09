@@ -15,7 +15,7 @@ export default function Hero() {
             </div>
             <div className="flex flex-col items-center justify-center gap-y-4 md:items-start">
                 <h1 className="text-center md:text-left">
-                    hi! I'm <span className="text-main">mehek</span>
+                    Hi! I'm <span className="text-main">Mehek</span>
                 </h1>
                 <p className="text-center md:text-justify">
                     computer science student, teaching assistant, and research

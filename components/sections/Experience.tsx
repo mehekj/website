@@ -41,7 +41,7 @@ export default function Experience() {
 
     return (
         <div className="home-section gap-10">
-            <h2>experience</h2>
+            <h2>Experience</h2>
             <Timeline items={data} />
         </div>
     );

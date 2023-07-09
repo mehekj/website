@@ -32,9 +32,9 @@ export default function Skills() {
 
     return (
         <div className="home-section gap-8">
-            <h2>skills</h2>
+            <h2>Skills</h2>
             <div className="flex flex-col gap-3">
-                <h3>languages</h3>
+                <h3>Languages</h3>
                 <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
                     {languages.map((text) => (
                         <Bubble>{text}</Bubble>
@@ -42,7 +42,7 @@ export default function Skills() {
                 </div>
             </div>
             <div className="flex flex-col gap-3">
-                <h3>technologies</h3>
+                <h3>Technologies</h3>
                 <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
                     {technologies.map((text) => (
                         <Bubble>{text}</Bubble>
@@ -50,7 +50,7 @@ export default function Skills() {
                 </div>
             </div>
             <div className="flex flex-col gap-3">
-                <h3>tools</h3>
+                <h3>Tools</h3>
                 <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
                     {tools.map((text) => (
                         <Bubble>{text}</Bubble>
