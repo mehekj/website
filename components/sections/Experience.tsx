@@ -7,35 +7,53 @@ export default function Experience() {
             subtitle: 'Activision - Infinity Ward Studios',
             start: '05/2023',
             end: '08/2023',
-            description: ['bullet 1', 'bullet2'],
+            description: [
+                'Leading a sustainability initiative for Call of Duty Modern Warfare II',
+                "Developing rendering features to cut back energy consumption in the game's multiplayer frontend",
+                'Writing C++ code for a Triple A game engine supporting a live product with regular title updates',
+            ],
         },
         {
             title: 'Teaching Assistant',
             subtitle: 'Brown University',
             start: '05/2022',
             end: '12/2023',
-            description: ['bullet 1', 'bullet2'],
+            description: [
+                "Designed assignment code and handouts for Brown's CSCI 1230 computer graphics course in C++ and OpenGL",
+                'Oversaw a team of TAs in completely rewriting multiple course projects and individually created a new assignment with an interactive Qt OpenGL demo to teach students about coordinate spaces and affine transformations',
+                'Hosted two sets of weekly office hours during the semester to provide one-on-one conceptual and debugging help',
+            ],
         },
         {
             title: 'Research Assistant',
             subtitle: 'Brown University',
             start: '05/2021',
             end: '05/2023',
-            description: ['bullet 1', 'bullet2'],
+            description: [
+                'Led a team of research assistants in building a MERN stack Typescript browser-based hypermedia system',
+                'Delegated coding tasks, supervised weekly meetings and codebase updates, performed user testing, managed member recruitment, and instituted a peer code review system',
+                'Introduced features for audio/video playback and editing, digital handwritten note transcription, and a table schema interface for viewing and modifying collections of document metadata',
+            ],
         },
         {
             title: 'Web Development Intern',
             subtitle: 'CMYK Digital Agency',
             start: '09/2019',
             end: '06/2020',
-            description: ['bullet 1', 'bullet2'],
+            description: [
+                'Built HTML/CSS templates for client contracted web pages from design mockups',
+                'Enhanced and maintained existing client sites',
+            ],
         },
         {
             title: 'Technology Analyst Intern',
             subtitle: 'Morgan Stanley',
             start: '07/2019',
             end: '08/2019',
-            description: ['bullet 1', 'bullet2'],
+            description: [
+                'Restored and refined Enterprise Computing Services department website in HTML/CSS/JS and Bootstrap',
+                'Maintained an online inventory of company database services',
+            ],
         },
     ];
 

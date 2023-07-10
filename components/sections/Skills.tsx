@@ -1,29 +1,32 @@
 export default function Skills() {
     const languages = [
         'C++',
-        'TypeScript',
         'JavaScript',
+        'TypeScript',
+        'HTML/CSS',
         'Python',
-        'C',
         'Java',
-        'HTML',
-        'CSS',
+        'C',
     ];
 
     const technologies = [
-        'OpenGL',
+        'React',
         'Node.js',
-        'React.js',
+        'OpenGL',
+        'Eigen',
         'Tensorflow',
+        'OpenCV',
+        'Flask',
         'Next.js',
         'TailwindCSS',
-        'OpenCV',
     ];
 
     const tools = [
-        'Git',
-        'VSCode',
+        'VS Code',
+        'Visual Studio',
         'Qt',
+        'Git',
+        'GCP',
         'Figma',
         'Photoshop',
         'Illustrator',
@@ -35,7 +38,7 @@ export default function Skills() {
             <h2>Skills</h2>
             <div className="flex flex-col gap-3">
                 <h3>Languages</h3>
-                <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
+                <div className="flex flex-row flex-wrap gap-x-4 gap-y-3">
                     {languages.map((text) => (
                         <Bubble>{text}</Bubble>
                     ))}
@@ -43,7 +46,7 @@ export default function Skills() {
             </div>
             <div className="flex flex-col gap-3">
                 <h3>Technologies</h3>
-                <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
+                <div className="flex flex-row flex-wrap gap-x-4 gap-y-3">
                     {technologies.map((text) => (
                         <Bubble>{text}</Bubble>
                     ))}
@@ -51,7 +54,7 @@ export default function Skills() {
             </div>
             <div className="flex flex-col gap-3">
                 <h3>Tools</h3>
-                <div className="flex flex-row flex-wrap gap-x-5 gap-y-3">
+                <div className="flex flex-row flex-wrap gap-x-4 gap-y-3">
                     {tools.map((text) => (
                         <Bubble>{text}</Bubble>
                     ))}

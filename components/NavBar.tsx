@@ -50,7 +50,7 @@ export default function NavBar() {
                                 }`}
                             >
                                 <NavLink href={href}>{page}</NavLink>
-                                <span className="relative top-[-6px] hidden h-0.5 max-w-0 bg-main group-hover:max-w-full md:block md:transition-all md:duration-300"></span>
+                                <span className="relative top-[-2px] hidden h-0.5 max-w-0 bg-main group-hover:max-w-full md:block md:transition-all md:duration-300"></span>
                             </li>
                         );
                     })}
