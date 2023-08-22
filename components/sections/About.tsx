@@ -19,7 +19,7 @@ export default function About() {
                 assistant of the{' '}
                 <a
                     target="_blank"
-                    href="https://browndash.com"
+                    href="https://brown-dash.github.io/Dash-Documentation/about/"
                     className="link"
                 >
                     Dash

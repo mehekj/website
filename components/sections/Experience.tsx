@@ -8,9 +8,9 @@ export default function Experience() {
             start: '05/2023',
             end: '08/2023',
             description: [
-                'Leading a sustainability initiative for Call of Duty Modern Warfare II',
-                "Developing rendering features to cut back energy consumption in the game's multiplayer frontend",
-                'Writing C++ code for a Triple A game engine supporting a live product with regular title updates',
+                'Launched Call of Duty Modern Warfare II\'s Sustainability Initiative and implemented the new "Eco Mode" setting',
+                'Developed rendering features to cut back energy consumption in the multiplayer game',
+                'Wrote C++ code for a Triple A game engine supporting a live product with regular title updates',
             ],
         },
         {
@@ -30,7 +30,7 @@ export default function Experience() {
             start: '05/2021',
             end: '05/2023',
             description: [
-                'Led a team of research assistants in building a MERN stack Typescript browser-based hypermedia system',
+                'Led a team of research assistants in building Dash, a MERN stack Typescript browser-based hypermedia system',
                 'Delegated coding tasks, supervised weekly meetings and codebase updates, performed user testing, managed member recruitment, and instituted a peer code review system',
                 'Introduced features for audio/video playback and editing, digital handwritten note transcription, and a table schema interface for viewing and modifying collections of document metadata',
             ],

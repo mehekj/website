@@ -16,21 +16,27 @@ export default function Projects() {
     return (
         <div className="flex flex-col justify-center gap-16">
             <div className="flex flex-col gap-8">
-                <h1>projects</h1>
-                <p>my academic and professional programming projects</p>
+                <h1>Projects</h1>
+                <p>My academic and professional programming projects</p>
             </div>
             <div className="flex flex-col gap-24 md:gap-16">
-                {projects.map((project) => (
-                    <ProjectCard
-                        title={project.title}
-                        date={project.date}
-                        technologies={project.technologies}
-                        category={project.category}
-                        description={project.description}
-                        image={project.image}
-                        link={'/projects/' + project.slug}
-                    />
-                ))}
+                {projects
+                    .sort((a, b) =>
+                        a.slug.split(/-(.*)/s)[0] > b.slug.split(/-(.*)/s)[0]
+                            ? -1
+                            : 1
+                    )
+                    .map((project) => (
+                        <ProjectCard
+                            title={project.title}
+                            date={project.date}
+                            technologies={project.technologies}
+                            category={project.category}
+                            description={project.description}
+                            image={project.image}
+                            link={'/projects/' + project.slug}
+                        />
+                    ))}
             </div>
         </div>
     );
@@ -49,13 +55,16 @@ type ProjectCardProps = {
 function ProjectCard(props: ProjectCardProps) {
     return (
         <div className="flex flex-col items-center gap-5 md:flex-row md:gap-10">
-            <div className="pointer-events-none min-w-[100px] overflow-hidden rounded-full md:min-w-[150px]">
-                <Image
-                    src={props.image}
-                    alt={props.title + ' thumbnail'}
-                    width={150}
-                    height={150}
-                />
+            <div className="min-w-[100px] overflow-hidden rounded-full md:min-w-[150px]">
+                <Link href={props.link}>
+                    <Image
+                        src={props.image}
+                        alt={props.title + ' thumbnail'}
+                        width={150}
+                        height={150}
+                        draggable={false}
+                    />
+                </Link>
             </div>
             <div className="flex w-full flex-col gap-4">
                 <div>

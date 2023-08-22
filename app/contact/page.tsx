@@ -5,8 +5,8 @@ export default function Contact() {
     return (
         <div className="flex flex-col justify-center gap-10">
             <div className="flex flex-col gap-8">
-                <h1>contact</h1>
-                <p>find me everywhere I'm present on the internet</p>
+                <h1>Contact</h1>
+                <p>Find me everywhere I'm present on the internet</p>
             </div>
             <div className="flex flex-col gap-3">
                 <div className="flex flex-row items-center gap-4">

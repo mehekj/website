@@ -1,0 +1,10 @@
+---
+title: Chess Vision
+date: 05/2022
+technologies: Python, OpenCV
+category: computer vision
+description: App for displaying chess moves on a digital board from a live webcam feed
+image: /images/projects/chess/thumbnail.svg
+---
+
+# Chess Vision

@@ -23,7 +23,7 @@ export default function NavBar() {
     const navLinks = [
         ['home', '/'],
         ['projects', '/projects'],
-        ['misc', '/misc'],
+        // ['misc', '/misc'],
         ['contact', '/contact'],
     ];
 

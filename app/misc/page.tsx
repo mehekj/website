@@ -43,13 +43,16 @@ type MiscCardProps = {
 function MiscCard(props: MiscCardProps) {
     return (
         <div className="flex flex-col items-center gap-5 md:flex-row md:gap-10">
-            <div className="pointer-events-none min-w-[100px] overflow-hidden rounded-full md:min-w-[150px]">
-                <Image
-                    src={props.image}
-                    alt={props.title + ' thumbnail'}
-                    width={150}
-                    height={150}
-                />
+            <div className="min-w-[100px] overflow-hidden rounded-full md:min-w-[150px]">
+                <Link href={props.link}>
+                    <Image
+                        src={props.image}
+                        alt={props.title + ' thumbnail'}
+                        width={150}
+                        height={150}
+                        draggable={false}
+                    />
+                </Link>
             </div>
             <div className="flex w-full flex-col gap-4">
                 <div>

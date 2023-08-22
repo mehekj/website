@@ -40,9 +40,7 @@ export default function Education() {
                                 <p className="text-sm">3.9 GPA</p>
                             </div>
                         </div>
-                        <div>
-                            Track: Academy for Engineering and Design Technology
-                        </div>
+                        <div>Academy for Engineering and Design Technology</div>
                     </div>
                 </OutlineBox>
             </div>

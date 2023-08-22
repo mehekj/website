@@ -18,8 +18,8 @@ export default function Hero() {
                     Hi! I'm <span className="text-main">Mehek</span>
                 </h1>
                 <p className="text-center md:text-justify">
-                    computer science student, teaching assistant, and research
-                    assistant at Brown University
+                    CS student and TA at Brown University <br />
+                    previous intern at Activision
                 </p>
                 <Button icon={<FiDownload />} href={'/files/Resume.pdf'}>
                     <span className="font-bold">resume</span>
