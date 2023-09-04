@@ -2,8 +2,8 @@ import { getAllPages } from '@/lib/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Misc() {
-    const posts = getAllPages('_misc', [
+export default async function Misc() {
+    const posts = await getAllPages('_misc', [
         'title',
         'date',
         'description',
@@ -20,11 +20,11 @@ export default function Misc() {
             <div className="flex flex-col gap-24 md:gap-16">
                 {posts.map((post) => (
                     <MiscCard
-                        title={post.title}
-                        date={post.date}
-                        description={post.description}
-                        image={post.image}
-                        link={'/misc/' + post.slug}
+                        title={post.frontmatter.title}
+                        date={post.frontmatter.date}
+                        description={post.frontmatter.description}
+                        image={post.frontmatter.image}
+                        link={'/misc/' + post.frontmatter.slug}
                     />
                 ))}
             </div>
