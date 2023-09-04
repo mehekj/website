@@ -2,8 +2,8 @@ import { getAllPages } from '@/lib/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Projects() {
-    const projects = getAllPages('_projects', [
+export default async function Projects() {
+    const projects = await getAllPages('_projects', [
         'title',
         'date',
         'technologies',
@@ -22,19 +22,20 @@ export default function Projects() {
             <div className="flex flex-col gap-24 md:gap-16">
                 {projects
                     .sort((a, b) =>
-                        a.slug.split(/-(.*)/s)[0] > b.slug.split(/-(.*)/s)[0]
+                        a.frontmatter.slug.split(/-(.*)/s)[0] >
+                        b.frontmatter.slug.split(/-(.*)/s)[0]
                             ? -1
                             : 1
                     )
                     .map((project) => (
                         <ProjectCard
-                            title={project.title}
-                            date={project.date}
-                            technologies={project.technologies}
-                            category={project.category}
-                            description={project.description}
-                            image={project.image}
-                            link={'/projects/' + project.slug}
+                            title={project.frontmatter.title}
+                            date={project.frontmatter.date}
+                            technologies={project.frontmatter.technologies}
+                            category={project.frontmatter.category}
+                            description={project.frontmatter.description}
+                            image={project.frontmatter.image}
+                            link={'/projects/' + project.frontmatter.slug}
                         />
                     ))}
             </div>

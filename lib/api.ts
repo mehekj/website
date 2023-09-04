@@ -1,52 +1,54 @@
 // borrowed from https://dev.to/slanted_dev/nextjs-13-blog-starter-1b6p
 
 import fs from 'fs';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
 import { join } from 'path';
-import matter from 'gray-matter';
+
+type PageData = {
+    frontmatter: { [key: string]: string };
+    mdxContent?: MDXRemoteSerializeResult;
+};
 
 export function getAllSlugs(dir: string) {
     const directory = join(process.cwd(), dir);
     return fs.readdirSync(directory);
 }
 
-export function getPageBySlug(
+export async function getPageBySlug(
     dir: string,
     slug: string,
     fields: string[] = []
 ) {
     const directory = join(process.cwd(), dir);
-    const realSlug = slug.replace(/\.md$/, '');
-    const fullPath = join(directory, `${realSlug}.md`);
+    const realSlug = slug.replace(/\.mdx$/, '');
+    const fullPath = join(directory, `${realSlug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
+    const mdx = await serialize(fileContents, { parseFrontmatter: true });
 
-    type Items = {
-        [key: string]: string;
-    };
-
-    const items: Items = {};
+    let out: PageData = { frontmatter: {} };
 
     fields.forEach((field) => {
         if (field === 'slug') {
-            items[field] = realSlug;
-        }
-        if (field === 'content') {
-            items[field] = content;
+            out.frontmatter[field] = realSlug;
         }
 
-        if (data[field]) {
-            items[field] = data[field];
+        if (mdx.frontmatter[field]) {
+            out.frontmatter[field] = String(mdx.frontmatter[field]);
         }
     });
 
-    return items;
+    out.mdxContent = mdx;
+
+    return out;
 }
 
-export function getAllPages(dir: string, fields: string[] = []) {
+export async function getAllPages(dir: string, fields: string[] = []) {
     const slugs = getAllSlugs(dir);
-    const pages = slugs
-        .map((slug) => getPageBySlug(dir, slug, fields))
-        // sort pages by date in descending order
-        .sort((page1, page2) => (page1.date > page2.date ? -1 : 1));
-    return pages;
+    const pages = await Promise.all(
+        slugs.map((slug) => getPageBySlug(dir, slug, fields))
+    );
+    return pages.sort((page1, page2) =>
+        page1.frontmatter.date > page2.frontmatter.date ? -1 : 1
+    );
 }

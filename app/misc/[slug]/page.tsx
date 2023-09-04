@@ -1,15 +1,14 @@
-import Markdown from '@/components/Markdown';
+import MDXRemoteWrapper from '@/lib/MDXRemoteWrapper';
 import { getPageBySlug } from '../../../lib/api';
-import markdownToHtml from '../../../lib/markdownToHtml';
 
 export default async function Post({ params }: { params: { slug: string } }) {
-    const page = getPageBySlug('_misc', params.slug, [
-        'title',
-        'date',
-        'content',
-    ]);
+    const page = await getPageBySlug('_misc', params.slug, ['title', 'date']);
 
-    const content = await markdownToHtml(page.content || '');
-
-    return <Markdown html={content} />;
+    return (
+        <div>
+            <h1>{page.frontmatter.title}</h1>
+            <h3>{page.frontmatter.date}</h3>
+            {page.mdxContent && <MDXRemoteWrapper source={page.mdxContent} />}
+        </div>
+    );
 }

@@ -58,7 +58,7 @@ export default function TimelineItem(props: TimelineItemProps) {
                             (open ? ' max-h-screen' : ' max-h-0')
                         }
                     >
-                        <ul className="ml-4 list-outside list-disc">
+                        <ul className="ml-5 list-outside list-disc">
                             {props.description.map((item, i) => (
                                 <li key={i}>{item}</li>
                             ))}
