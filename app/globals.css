@@ -29,3 +29,7 @@ h3 {
 .hover-color {
     @apply transition-colors duration-300 hover:text-main;
 }
+
+code {
+    @apply font-monospace;
+}

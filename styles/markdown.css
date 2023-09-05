@@ -1,0 +1,11 @@
+.project-page h1 {
+    @apply text-4xl font-bold md:text-5xl;
+}
+
+.project-page h2 {
+    @apply text-3xl font-bold leading-normal;
+}
+
+.project-page h3 {
+    @apply text-lg font-bold md:text-xl;
+}

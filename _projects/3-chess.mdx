@@ -6,3 +6,64 @@ category: computer vision
 description: App for displaying chess moves on a digital board from a live webcam feed
 image: /images/projects/chess/thumbnail.svg
 ---
+
+<div className="flex flex-row gap-x-4">
+    <Button href="/files/CV_final_writeup.pdf" icon={<FiFileText />}>
+        full report
+    </Button>
+    <Button
+        href="https://github.com/mehekj/cs1430-final-project/"
+        icon={<FiGithub />}
+    >
+        code
+    </Button>
+</div>
+
+<Image src="/images/projects/chess/hero.png" full={false}></Image>
+
+<OutlineBox>
+
+**Who:** me and 3 other second-year students
+
+**What:** App for displaying chess moves on a digital board from a live webcam feed
+
+**When:** May 2022
+
+**Where:** Brown University
+
+**Why:** Computer Vision class final project
+
+**How:** `Python`, `OpenCV`, `chess-board` package (for displaying the digital board graphics)
+
+</OutlineBox>
+
+Chess board recognition is an overdone project in CV, but our goal was to take a different approach. With an emphasis on socially responsible and transparent computing methods, we were the only students in the class to implement our project entirely free of "black box" deep learning and using entirely traditional CV algorithms.
+
+The project takes snapshots of the live webcam feed of a chessboard when a player clocks a move and uses Hough Line Transforms and Canny Edge Detection to identify the board and piece locations. Using our own method of tracking the game state and ranking board intensity changes, we could produce FEN strings with updated piece locations and captures to display a digital version of the board in real time.
+
+## Demo Video
+
+<Video src="/images/projects/chess/samplevid.mp4" full={true}></Video>
+
+## Process Images
+
+<Image src="../images/projects/chess/hough.png" full={false}>
+    Hough Transforms extract board edges which produce clustered intersection
+    points.
+</Image>
+
+<Image src="../images/projects/chess/warp.png" full={true}>
+    The board image is warped using the matrix of corners to divide it up into
+    squares.
+</Image>
+
+<Image src="../images/projects/chess/display.png" full={true}>
+    Final user interface of the program displaying from left to right: the live
+    webcam feed, most recent snapshot with Hough Lines and board corners, the
+    warped board image with filled squares outlined, and the digital board with
+    the identified game state.
+</Image>
+
+<Image src="../images/projects/chess/demo.png" full={true}>
+    Live demo set up for presentations.
+</Image>

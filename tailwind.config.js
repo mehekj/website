@@ -9,6 +9,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['var(--font-quicksand)'],
+                monospace: ['Courier New'],
             },
             colors: {
                 white: '#FFFCF7',
