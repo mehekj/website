@@ -7,6 +7,8 @@ description: Physically based renderer with soft shadows and caustics
 image: /images/projects/path/thumbnail.svg
 ---
 
+<Image src="/images/projects/path/hero.png" full={true} />
+
 <OutlineBox>
 
 **Who:** just me
@@ -23,3 +25,66 @@ image: /images/projects/path/thumbnail.svg
 
 </OutlineBox>
 
+<div>
+
+Features:
+
+-   Monte Carlo sampling
+-   Indirect and direct illumination with next event estimation
+-   Emissive area light sources and soft shadows
+-   Four types of BRDFs (diffuse, Phong, mirror, refractive with Fresnel reflection)
+-   Tone mapping
+-   BRDF importance sampling
+-   Depth of field
+
+</div>
+
+## Sample Images
+
+### BRDF Types
+
+Rendered at 512x512px with 200 samples per pixel.
+
+<Image src="/images/projects/path/200_512_diffuse.png" full={false}>
+    diffuse
+</Image>
+
+<Image src="/images/projects/path/200_512_glossy.png" full={false}>
+    Phong
+</Image>
+
+<Image src="/images/projects/path/200_512_mirror.png" full={false}>
+    mirror
+</Image>
+
+<Image src="/images/projects/path/200_512_sphere.png" full={false}>
+    refractive
+</Image>
+
+### BRDF Importance Sampling
+
+Rendered at 512x512px with 20 samples per pixel.
+
+<div className="flex flex-row gap-x-6">
+    <Image src="/images/projects/path/20_512_diffuse.png" full={false}>
+        diffuse without importance sampling
+    </Image>
+    <Image
+        src="/images/projects/path/20_512_diffuse_importance.png"
+        full={false}
+    >
+        diffuse with importance sampling
+    </Image>
+</div>
+
+<div className="flex flex-row gap-x-6">
+    <Image src="/images/projects/path/20_512_glossy.png" full={false}>
+        Phong without importance sampling
+    </Image>
+    <Image
+        src="/images/projects/path/20_512_glossy_importance.png"
+        full={false}
+    >
+        Phong with importance sampling
+    </Image>
+</div>

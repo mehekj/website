@@ -9,3 +9,7 @@
 .project-page h3 {
     @apply text-lg font-bold md:text-xl;
 }
+
+.project-page ul {
+    @apply ml-5 list-disc;
+}
