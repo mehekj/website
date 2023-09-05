@@ -12,7 +12,7 @@ export default function Image(props: PropsWithChildren<ImageProps>) {
                 <a href={props.src} target="_blank">
                     <img
                         src={props.src}
-                        className={`h-full ${props.full ? 'w-full' : ''}`}
+                        className={props.full ? 'h-full w-full' : ''}
                     />
                 </a>
             </div>
