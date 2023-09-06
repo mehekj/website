@@ -26,11 +26,12 @@ export default function Skills() {
         'Visual Studio',
         'Qt',
         'Git',
-        'GCP',
+        'Perforce',
         'Figma',
         'Photoshop',
         'Illustrator',
         'Blender',
+        'GCP',
     ];
 
     return (
