@@ -4,7 +4,7 @@ export default function Experience() {
     const data = [
         {
             title: 'Engine Engineering Intern',
-            subtitle: 'Activision - Infinity Ward Studios',
+            subtitle: 'Activision - Infinity Ward',
             start: '05/2023',
             end: '08/2023',
             description: [
