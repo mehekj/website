@@ -21,11 +21,10 @@ export default async function Projects() {
             </div>
             <div className="flex flex-col gap-24 md:gap-16">
                 {projects
-                    .sort((a, b) =>
-                        a.frontmatter.slug.split(/-(.*)/s)[0] >
-                        b.frontmatter.slug.split(/-(.*)/s)[0]
-                            ? -1
-                            : 1
+                    .sort(
+                        (a, b) =>
+                            parseInt(b.frontmatter.slug.split(/-(.*)/s)[0]) -
+                            parseInt(a.frontmatter.slug.split(/-(.*)/s)[0])
                     )
                     .map((project) => (
                         <ProjectCard

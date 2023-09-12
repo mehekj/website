@@ -17,7 +17,7 @@ export default function Experience() {
             title: 'Teaching Assistant',
             subtitle: 'Brown University',
             start: '05/2022',
-            end: '12/2023',
+            end: 'Present',
             description: [
                 "Designed assignment code and handouts for Brown's CSCI 1230 computer graphics course in C++ and OpenGL",
                 'Oversaw a team of TAs in completely rewriting multiple course projects and individually created a new assignment with an interactive Qt OpenGL demo to teach students about coordinate spaces and affine transformations',

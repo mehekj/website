@@ -1,0 +1,30 @@
+---
+title: Smart Flappy Bird
+date: 05/2021
+technologies: Java, JavaFX
+category: deep learning
+description: Flappy bird game that trains populations of birds to play the game automatically using a neuroevolution algorithm
+image: /images/projects/flappy/thumbnail.svg
+---
+
+<Image src="/images/projects/flappy/hero.png" full={false} />
+
+<OutlineBox>
+
+**Who:** just me
+
+**What:** Created a Java version of flappy bird that trains a simple neural network to play the game using a neuroevolution algorithm that transfers and mutates high performing weights across generations of birds
+
+**When:** May 2021
+
+**Where:** Brown University
+
+**Why:** Object Oriented Programming final project
+
+**How:** `Java`, `JavaFX`
+
+</OutlineBox>
+
+The application has two main modes (manual and smart) which a user is prompted to select upon startup. Manual functions like the standard Flappy Bird game where you control a single bird that can jump using the space bar, and must try to avoid the constantly scrolling generated pipes, with the distance you travel being your score.
+
+Smart mode uses a neural network to train a population of birds that play the game simultaneously using data about the pipe and bird positions and velocities. The first generation of birds is generated with random weights. Rather than providing the algorithm with training data, I instead used a simplified "evolution" algorithm which selects the best performing birds of each generation and passes the weights of those birds on to the next generation with some randomized "mutations" that involve slightly modifying some of the weights.
