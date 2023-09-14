@@ -39,3 +39,111 @@ image: /images/projects/intrinsic/thumbnail.svg
 **How:** `C++`, `Qt`, `Eigen`
 
 </OutlineBox>
+
+## Problem
+
+So what's the goal of this paper?
+
+Here's an example of a nice manifold triangle surface mesh that encodes the geometry of the object well.
+
+<Image src="/images/projects/intrinsic/badmesh.png" />
+
+Unfortunately it's got _a lot_ of gross skinny triangles of various sizes that aren't ideal for many computations such as PDEs on meshes.
+
+We could subdivide the mesh or perform some form of remeshing to get a more regular surface...
+
+<Image src="/images/projects/intrinsic/extrinsicprocess.png" />
+
+...but ideally we want a way to be able perform more accurate calculations without modifying the actual 3D geometry or exponentially increasing the mesh elements we have to work with. We need one representation that can both accurately encode shape while also supporting efficient computation.
+
+<Image src="/images/projects/intrinsic/extrinsiclimit.png" />
+
+Whereas extrinsic connectivity necessarily informs geometry, intrinsic meshes attempt to preserve geometry while modifying topology to create a more desirable and regular mesh representation.
+
+## Intrinsic Triangulations
+
+<Image src="/images/projects/intrinsic/extvsin.png" />
+
+Intrinsic quantities are all relative (like length and angles) and don't rely on fixed embeddings in space the way extrinsic mesh properties do (like vertex positions).
+
+<Image src="/images/projects/intrinsic/intrinsicfaces.png" />
+
+This means that even while preserving the same geometry, intrinsic faces can "bend" over extrinsic edges.
+
+<Image src="/images/projects/intrinsic/signpost.png" />
+
+We can represent this with a "signpost" data structure where for every vertex we store the direction and distance to the neighboring vertices. We preserve all of the original vertices from the extrinsic mesh and construct the intrinsic mesh using this calculated relative quantities.
+
+## Our Implementation
+
+### Construction and Atomic Operations
+
+Starting from scratch, we created our own implementation of a half edge mesh data structure in C++ and then constructed the representation of the intrinsic mesh class on top of this. After creating functions to process loaded `.obj` files into the standard half edge class and initialize the corresponding intrinsic mesh with all its calculated properties, we were able to implement some basic atomic mesh operations:
+
+<div className="flex flex-row gap-x-6">
+    <Image src="/images/projects/intrinsic/cube_flip.png" full={false}>
+        edge flip
+    </Image>
+    <Image src="/images/projects/intrinsic/cube_insert.png" full={false}>
+        vertex insertion
+    </Image>
+</div>
+
+Here the black outlines show the edges of original extrinsic mesh. The white outlines show the edges of the intrinsic mesh. The colored faces are the faces of the intrinsic mesh. Note that for the edge flip the modified green and red faces wrap over the intrinsic edge.
+
+### Tracing Queries
+
+For most other things we'd want to do with these meshes (including our rendering process) we needed to be able to find correspondences between points on the extrinsic and intrinsic meshes.
+
+<Image src="/images/projects/intrinsic/tracing.png" full={false} />
+
+This required implementing a querying algorithm that could take one point and return another by tracing a vector across the surface from a vertex to the point. This involved a lot of funky switches between coordinate systems and some serious debugging.
+
+### Actually Improving the Meshes
+
+We implemented two algorithms:
+
+1. **Delaunay triangulation:** perform edge flips until we converge on positive cotangent weights (generally a nice mesh property)
+2. **Delaunay refinement:** perform triangulation while also inserting vertices until we converge (or at least approach) an ideal minimum corner angle for all the triangles (&le; 30º)
+
+Importantly both of these algorithms never destroy the original vertices, they only modify the connectivity between them or add new vertices.
+
+Here is an example of a poor mesh (from the [Thingi10k](https://ten-thousand-models.appspot.com/) dataset) after just performing triangulation:
+
+<div className="flex flex-row items-center gap-x-6">
+    <Image src="/images/projects/intrinsic/gear_flip.png" full={false}></Image>
+    <Image
+        src="/images/projects/intrinsic/gear_flip_intrinsic_angles.png"
+        full={false}
+    ></Image>
+</div>
+
+The histogram shows the corner angles of the intrinsic mesh triangles. Blue is original mesh (identical to the extrinsic) and orange shows the angles after triangulation (only performing edge flips). Clearly, there isn't much of a change yet as there are still high numbers of really small and really large angles indicating skinny triangles.
+
+Here's the same mesh after refinement:
+
+<div className="flex flex-row items-center gap-x-6">
+    <Image
+        src="/images/projects/intrinsic/gear_refine.png"
+        full={false}
+    ></Image>
+    <Image
+        src="/images/projects/intrinsic/gear_refine_intrinsic_angles.png"
+        full={false}
+    ></Image>
+</div>
+
+Now we can see a noticeable jump around the 30º mark because we targeted that as our minimum angle for refinement.
+
+### Rendering
+
+Since we can't visualize the intrinsic mesh as is using a traditional rasterization pipeline by just plugging this mesh into something like OpenGL, we used a stripped down path tracer to render all of our images. We could use our point querying functions to find the corresponding intrinsic face for every intersection on the extrinsic surface and color the mesh accordingly.
+
+I also added some animation features to render videos of the meshes in motion as the individual flips and insertions are performed for the retriangulation and refinement algorithms for some fun presentation visualizations.
+
+## See it in action!
+
+<Video src="/images/projects/intrinsic/video.mp4" full={true}>
+    An appropriately extravagant presentation video showing the progression of
+    these algorithms
+</Video>
