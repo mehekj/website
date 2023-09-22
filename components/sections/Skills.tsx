@@ -1,24 +1,23 @@
 export default function Skills() {
     const languages = [
-        'C++',
+        'C/C++',
+        'Python',
         'JavaScript',
         'TypeScript',
         'HTML/CSS',
-        'Python',
         'Java',
-        'C',
     ];
 
     const technologies = [
         'React',
         'Node.js',
-        'OpenGL',
-        'Eigen',
+        'Express.js',
         'Tensorflow',
-        'OpenCV',
-        'Flask',
         'Next.js',
         'TailwindCSS',
+        'OpenCV',
+        'OpenGL',
+        'Eigen',
     ];
 
     const tools = [
@@ -27,11 +26,12 @@ export default function Skills() {
         'Qt',
         'Git',
         'Perforce',
+        'GCP',
+        'MongoDB',
         'Figma',
         'Photoshop',
         'Illustrator',
         'Blender',
-        'GCP',
     ];
 
     return (

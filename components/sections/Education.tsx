@@ -20,10 +20,11 @@ export default function Education() {
                             </div>
                         </div>
                         <div>
-                            Coursework: Advanced Computer Graphics, Computer
-                            Vision, UI/UX, Deep Learning, Computer Systems, Data
-                            Structures and Algorithms, Discrete Math, Linear
-                            Algebra, Statistical Inference
+                            Coursework: Computer Systems, Data Structures and
+                            Algorithms, UI/UX, Deep Learning, NLP, Computer
+                            Vision, Advanced Computer Graphics, Computational
+                            Photography, Embedded Systems, Linear Algebra,
+                            Statistical Inference
                         </div>
                     </div>
                 </OutlineBox>

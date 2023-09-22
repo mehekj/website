@@ -8,7 +8,7 @@ import Link from '@/components/markdown/Link';
 import Video from '@/components/markdown/Video';
 import Youtube from '@/components/markdown/Youtube';
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote';
-import { FiFigma, FiFileText, FiGithub } from 'react-icons/fi';
+import { FiFigma, FiFileText, FiGithub, FiLink } from 'react-icons/fi';
 
 interface MDXRemoteWrapperProps {
     source: MDXRemoteProps;
@@ -29,6 +29,7 @@ export default function MDXRemoteWrapper({ source }: MDXRemoteWrapperProps) {
                 FiFileText,
                 FiGithub,
                 FiFigma,
+                FiLink,
             }}
         />
     );
