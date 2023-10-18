@@ -16,13 +16,13 @@ export default function Education() {
                             </div>
                             <div className="flex flex-row items-center justify-between text-right">
                                 <p className="text-sm">09/2020 - 05/2024</p>
-                                <p className="text-sm">4.0 GPA</p>
+                                <p className="text-sm">4.0/4.0 GPA</p>
                             </div>
                         </div>
                         <div>
                             Coursework: Computer Systems, Data Structures and
                             Algorithms, UI/UX, Deep Learning, NLP, Computer
-                            Vision, Advanced Computer Graphics, Computational
+                            Vision, Computer Graphics, Computational
                             Photography, Embedded Systems, Linear Algebra,
                             Statistical Inference
                         </div>
@@ -38,7 +38,7 @@ export default function Education() {
                             </div>
                             <div className="flex flex-row items-center justify-between text-right">
                                 <p className="text-sm">09/2016 - 06/2020</p>
-                                <p className="text-sm">3.9 GPA</p>
+                                <p className="text-sm">3.9/4.0 GPA</p>
                             </div>
                         </div>
                         <div>Academy for Engineering and Design Technology</div>

@@ -21,7 +21,10 @@ export default function Hero() {
                     CS student and TA at Brown University <br />
                     previous intern at Activision
                 </p>
-                <Button icon={<FiDownload />} href={'/files/Resume.pdf'}>
+                <Button
+                    icon={<FiDownload />}
+                    href={'/files/Mehek_Jethani_Resume.pdf'}
+                >
                     <span className="font-bold">resume</span>
                 </Button>
             </div>
