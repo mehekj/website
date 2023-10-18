@@ -61,8 +61,10 @@ export default function TimelineItem(props: TimelineItemProps) {
                             {props.description.map((item, i) => (
                                 <li
                                     key={i}
-                                    dangerouslySetInnerHTML={{ __html: item }}
-                                ></li>
+                                    // dangerouslySetInnerHTML={{ __html: item }}
+                                >
+                                    {item}
+                                </li>
                             ))}
                         </ul>
                     </div>
