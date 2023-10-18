@@ -17,8 +17,6 @@ type TimelineItemProps = TimelineItemData & {
 
 export default function TimelineItem(props: TimelineItemProps) {
     const toggleOpen = (e: React.PointerEvent) => {
-        e.stopPropagation();
-        e.preventDefault();
         props.setActive(props.index);
     };
 
@@ -54,13 +52,19 @@ export default function TimelineItem(props: TimelineItemProps) {
                     </div>
                     <div
                         className={
-                            'transition-all duration-300' +
+                            'cursor-text transition-all duration-300' +
                             (open ? ' max-h-screen' : ' max-h-0')
                         }
+                        onPointerDown={(e) => e.stopPropagation()}
                     >
                         <ul className="ml-5 list-outside list-disc">
                             {props.description.map((item, i) => (
-                                <li key={i}>{item}</li>
+                                <li
+                                    key={i}
+                                    // dangerouslySetInnerHTML={{ __html: item }}
+                                >
+                                    {item}
+                                </li>
                             ))}
                         </ul>
                     </div>
