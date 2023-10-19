@@ -62,9 +62,7 @@ export default function TimelineItem(props: TimelineItemProps) {
                                 <li
                                     key={i}
                                     dangerouslySetInnerHTML={{ __html: item }}
-                                >
-                                    {item}
-                                </li>
+                                ></li>
                             ))}
                         </ul>
                     </div>
