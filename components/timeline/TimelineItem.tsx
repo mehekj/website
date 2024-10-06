@@ -43,12 +43,14 @@ export default function TimelineItem(props: TimelineItemProps) {
                             <h3>{props.title}</h3>
                             <h4>{props.subtitle}</h4>
                         </div>
-                        <FiChevronRight
-                            size={40}
-                            className={`cursor-pointer transition-all duration-300 ${
-                                open ? 'rotate-90 text-main' : 'rotate-0'
-                            }`}
-                        />
+                        {props.description.length > 0 && (
+                            <FiChevronRight
+                                size={40}
+                                className={`cursor-pointer transition-all duration-300 ${
+                                    open ? 'rotate-90 text-main' : 'rotate-0'
+                                }`}
+                            />
+                        )}
                     </div>
                     <div
                         className={
