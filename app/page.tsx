@@ -14,13 +14,14 @@ export default function Home() {
             <Education /> */}
             <div>
                 <h1>under construction</h1>
+                <br />
                 <p>
                     surprise surprise! instead of working on any of my other
                     half finished web apps i've decided to redesign my website
                     again. come back in 6-24 months and maybe it'll be done and
                     look 10% better lol
                 </p>
-
+                <br />
                 <p>
                     now that i'm no longer trying and failing to sell myself to
                     the corporate world maybe i'll use this domain for more fun
@@ -28,7 +29,7 @@ export default function Home() {
                     templates, and journey to learn to feed myself like a whole
                     human.
                 </p>
-
+                <br />
                 <img src="/images/construction.gif" alt="construction" />
             </div>
         </div>

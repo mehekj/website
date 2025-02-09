@@ -20,7 +20,7 @@ export default function RootLayout({
             <head />
             <body className="bg-primary text-base md:text-lg">
                 <div className="m-auto max-w-screen-lg px-6 py-28 md:py-40">
-                    <NavBar />
+                    {/* <NavBar /> */}
                     {children}
                 </div>
             </body>
