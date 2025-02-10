@@ -3,6 +3,7 @@ import Hero from '../components/sections/Hero';
 import Experience from '../components/sections/Experience';
 import Skills from '../components/sections/Skills';
 import Education from '../components/sections/Education';
+import Image from '../components/markdown/Image';
 
 export default function Home() {
     return (
@@ -30,7 +31,7 @@ export default function Home() {
                     human.
                 </p>
                 <br />
-                <img src="/images/construction.gif" alt="construction" />
+                <Image src="/images/construction.gif" full={true} />
             </div>
         </div>
     );
